@@ -47,8 +47,8 @@ def solve(mesh_file, cell_regions_file, facet_regions_file, output_file):
     #L = f*v*dx(0) + f*v*dx(1)
     L = f0*v*dx(0) + f1*v*dx(1)
 
-    # Dirichlet boundary (0 at (0,0,0))
-    bc1 = DirichletBC(V, Constant(0.0), facet_regions, 3)
+    # Dirichlet boundary (1 at (0,0,0))
+    bc1 = DirichletBC(V, Constant(1.0), facet_regions, 3)
 
     #TODO: smaller tol without No-Facets-Warning
     def origin(x, on_boundary):
