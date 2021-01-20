@@ -46,7 +46,6 @@ def solver(mesh_file, cell_regions_file, facet_regions_file, output_file, output
     # Compute solution
     u = Function(V)
     solve(a == L, u, bc1)
-    #solve(a == L, u, bc1, solver_parameters={'linear_solver':'mumps'})
 
     #stray field
     #H = project(-grad(u), W)
